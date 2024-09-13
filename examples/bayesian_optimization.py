@@ -15,7 +15,7 @@ y = np.sin(X)/2 - ((10 - X)**2)/50 + 2
 # assembling initial training set
 X_initial, y_initial = X[150].reshape(1, -1), y[150].reshape(1, -1)
 
-with plt.style.context('seaborn-white'):
+with plt.style.context('ggplot'):
     plt.figure(figsize=(12.5*1.5, 7.5*1.5))
     plt.plot(X, y, c='k', linewidth=6)
     plt.title('The function to be optimized')
@@ -44,7 +44,7 @@ for acquisition, query_strategy in acquisitions:
     )
 
     # plotting the initial estimation
-    with plt.style.context('seaborn-white'):
+    with plt.style.context('ggplot'):
         plt.figure(figsize=(35, 7))
         for n_query in range(5):
             # plot current prediction

@@ -36,7 +36,7 @@ regressor = ActiveLearner(
 )
 
 # plotting the initial estimation
-with plt.style.context('seaborn-white'):
+with plt.style.context('ggplot'):
     plt.figure(figsize=(14, 7))
     x = np.linspace(0, 20, 1000)
     pred, std = regressor.predict(x.reshape(-1,1), return_std=True)
@@ -53,7 +53,7 @@ for idx in range(n_queries):
     regressor.teach(X[query_idx].reshape(1, -1), y[query_idx].reshape(1, -1))
 
 # plotting after active learning
-with plt.style.context('seaborn-white'):
+with plt.style.context('ggplot'):
     plt.figure(figsize=(14, 7))
     x = np.linspace(0, 20, 1000)
     pred, std = regressor.predict(x.reshape(-1,1), return_std=True)
